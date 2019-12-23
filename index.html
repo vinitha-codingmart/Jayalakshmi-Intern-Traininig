@@ -43,14 +43,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     list-style-image: initial;
     list-style-type: none;
 }
-nav ul, nav ol {
-    /* list-style: none; */
-    /* list-style-image: none; */
-}
-menu, ol, ul {
-    /* padding: 0 0 0 40px; */
-}
 
+.pagination>ul>li>a>span:hover{
+    opacity:1;
+}
 dl, menu, ol, ul {
     margin: 1em 0;
 }
@@ -61,6 +57,7 @@ ul {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 40px;
+
 }
 li {
     display: list-item;
@@ -104,7 +101,7 @@ a:-webkit-any-link {
     opacity: 0.3;
     -webkit-transform: rotate(45deg);
     }
-
+    
 
 header>.logo {
     height: 78px;
@@ -253,6 +250,9 @@ a, a:hover, a:active, a:focus {
     outline-style: initial;
     outline-width: 0px;
 }
+span:hover{
+    opacity:2;
+}
 .clearfix:before, .clearfix:after {
     content: " ";
     display: table;
@@ -289,9 +289,7 @@ header>.video>.description>.play>.playIco {
     /* background: url(../img/play-ico.png) center no-repeat; */
     border-left: solid 1px #fc7980;
 }
-.floatL {
-    float: left;
-}
+
 .clearfix:after {
     clear: both;
 }
@@ -665,7 +663,11 @@ background-color
     section>h1 {
     font-size: 60px;
     line-height: 60px;
-    margin-left:250px;
+    text-align:center;
+    opacity: 1;
+    transform: matrix(1,0,0,1,0,0);
+
+
     text-transform: uppercase;
     }
     .proximaLite {
@@ -829,7 +831,9 @@ figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
 }
 figure {
+   opacity:1;
    
+   transform:matrix(1,0,0,1,0,0);
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 40px;
@@ -1127,9 +1131,7 @@ p {
     margin: auto;
 }
 
-figure {
-    /* margin: 0; */
-}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
 }
@@ -1320,12 +1322,7 @@ b, strong {
     width: 200px;
     margin: auto;
 }
-figure {
-    /* margin: 0; */
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-    display: block;
-}
+
 
 figure {
     display: block;
@@ -2102,6 +2099,116 @@ a:-webkit-any-link {
     cursor: pointer;
     text-decoration: underline;
 }
+h1{
+    text-align: center;
+}
+.scroll a:hover{
+    
+
+background-image
+:
+url("http://adayinbigdata.com/img/down@2x.png");
+
+
+background-attachment
+:
+scroll;
+
+
+background-repeat
+:
+no-repeat;
+
+
+background-position-x
+:
+center;
+
+
+background-position-y
+:
+top;
+
+
+background-size
+:
+auto;
+
+
+background-origin
+:
+padding-box;
+
+
+background-clip
+:
+border-box;
+background-color:transparent;
+background-size:30px;
+border-top-width
+:
+1px;
+
+
+border-right-width
+:
+1px;
+
+
+border-bottom-width
+:
+1px;
+
+
+border-left-width
+:
+1px;
+
+
+border-top-style
+:
+solid;
+
+
+border-right-style
+:
+solid;
+
+
+border-bottom-style
+:
+solid;
+
+
+border-left-style
+:
+solid;
+
+
+border-top-color
+:
+
+#f7505a;
+
+
+border-right-color
+:
+
+#f7505a;
+
+
+border-bottom-color
+:
+
+#f7505a;
+
+
+border-left-color
+:
+
+#f7505a;
+}
+
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   
@@ -2150,14 +2257,15 @@ a:-webkit-any-link {
  <div class="scroll1">
  <strong><h4 class="scroll1txt">What is big Data?</h4></strong>
  <div class="next">
- <a href="whatisbigdata"></a>
+ <a href="#whatisbigdata"></a>
  </div>
  </div>
  <div class="number" id="01">
  <div>1</div>
  </div>
+ 
  <section id="whatisbigdata" class="collapsfix scrolling mainWidth sectionPadding" >
- <h1 class="proximaLite apear" style="opacity: 1;transform: matrix(1,0,0,1,0,0);">
+ <h1 class="proximaLite apear">
  what is 
  <strong class="keyword" style="color:red;">big data?</strong>
  
@@ -2175,7 +2283,7 @@ a:-webkit-any-link {
  <div>2</div>
  </div>
   <section id="whynow" class="collapsfix scrolling mainWidth sectionPadding">
-               <h1 class="proximaLite apear" style="margin-left:200px;"><strong>Why</strong> is it becoming <br>important <strong>now</strong>?</h1>
+               <h1 class="proximaLite apear"><strong>Why</strong> is it becoming <br>important <strong>now</strong>?</h1>
                <div class="clearfix">
                    <div class="cul apear floatL">
                        <figure class="img01"></figure>
@@ -2262,7 +2370,7 @@ a:-webkit-any-link {
            </div>
             <div class="number center proximaBold"><div>5</div></div>
             <section id="ourambition" class="scrolling clearfix mainWidth">
-               <h1 class="proximaLite apear" style="opacity:1;transform:matrix(1, 0, 0, 1, 0, 0); margin-left:50px;">Our ambition was to <br>show how we <strong>can use</strong> <br><strong>Big Data</strong> to improve peoples <br>lives and <strong>day to day</strong> <br>experiences</h1>
+               <h1 class="proximaLite apear">Our ambition was to <br>show how we <strong>can use</strong> <br><strong>Big Data</strong> to improve peoples <br>lives and <strong>day to day</strong> <br>experiences</h1>
                <div class="clearfix">
                    <div class="cul apear floatL">
                    		<div class="verticalLine"></div>
