@@ -54,6 +54,7 @@ h3{
          <h3>Reenter your Password  <input id="rpw" type="password" placeholder="rpassword" value=""/><br></h3>
             <input id="rgstr_btn" type="submit" value="Signup" onClick="signup()"/> 
         </form>
+
         </div>
         <br>
         
@@ -63,7 +64,7 @@ h3{
         <h3>Username:
             <input id="usernameLogin" type="text" placeholder="Enter Username" value=""/></h3>
          <h3>Password:   <input id="passwordlogin" type="password" placeholder="Enter Password" value=""/></h3><br>
-            <input id="login_btn" type="submit" value="Login" onClick="login()"/> 
+            <input id="login_btn" type="button" value="Login" onClick="login()"/> 
        </form>
        </div>
        </div>
@@ -116,7 +117,7 @@ function login()
         userExit = true;
         Valid = true;
         alert("login Successful!!");
-       window.location.href ="file:///D:/html_css/Jayalakshmi-Intern-Traininig/index.html";
+       window.location.href ="index.html";
         break;
       } else {
         userExit = true;
@@ -124,16 +125,11 @@ function login()
         break;
       }
     }
-    if (!Valid && !userExit) {
-      alert("please Register ");
-    }
   }
   usernamel = "";
   passwordl = "";
 
-  if (!userExit) {
-    alert("Please Register");
-  }
+  
   modalLogin.style.display = "none";
 }
 </script>
