@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learning JavaScript</title>
+        <style>
+        * {
+  box-sizing: border-box;
+  
+}
+
+/* Create two equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 40%;
+  padding: 20px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.column2{
+float: left;
+  width: 50%;
+  padding-left: 200px;
+  padding-top:10px;
+  height: 300px; 
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body{
+    background-image:url('https://coloredbrain.com/wp-content/uploads/2016/07/login-background.jpg');
+    color:white;
+    height: 100%; 
+    background-position: center;
+    
+}
+h1{
+    font-size:50px;
+}
+h3{
+    font-size:25px;
+}
+</style>
+    </head>
+    <body>
+    <div class="row">
+  <div class="column1">
+   
+    <h1>Register</h1>
+      <form id="register-form"> 
+       <h3>Name:     <input id="username" type="text" placeholder="Name" value=""/><br></h3>
+        <h3>Password:    <input id="pw" type="password" placeholder="Password" value=""/><br></h3>
+         <h3>Reenter your Password  <input id="rpw" type="password" placeholder="rpassword" value=""/><br></h3>
+            <input id="rgstr_btn" type="submit" value="Signup" onClick="signup()"/> 
+        </form>
+        </div>
+        <br>
+        
+  <div class="column2">
+        <h1>Login</h1>
+        <form id="login-form"> 
+        <h3>Username:
+            <input id="usernameLogin" type="text" placeholder="Enter Username" value=""/></h3>
+         <h3>Password:   <input id="passwordlogin" type="password" placeholder="Enter Password" value=""/></h3><br>
+            <input id="login_btn" type="submit" value="Login" onClick="login()"/> 
+       </form>
+       </div>
+       </div>
+       <script>
+ function signup() {
+      let username = document.getElementById("username").value;
+      let password = document.getElementById("pw").value;
+      let repassword = document.getElementById("rpw").value;
+      let tasks;
+      if (localStorage.getItem("users") == null) {
+         tasks = [];
+      } else {
+         tasks = JSON.parse(localStorage.getItem("users"));
+       }
+  //   console.log(username, password);
+  if (password == repassword) {
+    tasks.push({ usr: username, pass: password });
+    localStorage.setItem("users", JSON.stringify(tasks));
+    alert("Signup Successful!");
+  } else {
+    alert("password didnt match!!");
+  }
+
+  username = "";
+  password = "";
+  repassword = "";
+  modal.style.display = "none";
+}
+
+function login() 
+{
+  var usernamel = document.getElementById("usernameLogin").value;
+  var passwordl = document.getElementById("passwordlogin").value;
+  //   console.log(username);
+  let tasks;
+  if (localStorage.getItem("users") == null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem("users"));
+  }
+
+  console.log(tasks.length);
+  let userExit = false;
+  let Valid = false;
+  var i = 0;
+  for (i = 0; i < tasks.length; i++) {
+    console.log(tasks[i]);
+    if (tasks[i].usr == usernamel) {
+      if (tasks[i].pass == passwordl) {
+        userExit = true;
+        Valid = true;
+        alert("login Successful!!");
+       window.location.href ="file:///D:/html_css/Jayalakshmi-Intern-Traininig/index.html";
+        break;
+      } else {
+        userExit = true;
+        alert("Not Valid User!! or Wrong Password");
+        break;
+      }
+    }
+    if (!Valid && !userExit) {
+      alert("please Register ");
+    }
+  }
+  usernamel = "";
+  passwordl = "";
+
+  if (!userExit) {
+    alert("Please Register");
+  }
+  modalLogin.style.display = "none";
+}
+</script>
+    </body>
+</html>
