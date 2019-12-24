@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+   
+    .column1 {
+  float: left;
+  width: 40%;
+  padding-top: 10px;
+  padding-left: 200px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body{
+    background-image:url('https://coloredbrain.com/wp-content/uploads/2016/07/login-background.jpg');
+    color:white;
+    height: 100%; 
+    background-position: center;
+    
+}
+h1{
+    font-size:50px;
+}
+h3{
+    font-size:25px;
+}
+</style>
+</head>
+<body>
+<div class="row">
+<div class="column1">
+   
+    <h1>Register</h1>
+      <form id="register-form"> 
+       <h3>Name:     <input id="username" type="text" placeholder="Name" value=""/><br></h3>
+        <h3>Password:    <input id="pw" type="password" placeholder="Password" value=""/><br></h3>
+         <h3>Reenter your Password: <input id="rpw" type="password" placeholder="rpassword" value=""/><br></h3>
+            <input id="rgstr_btn" type="submit" value="Signup" onClick="signup()"/> 
+        </form>
+
+        </div>
+        </div>
+        <script>
+         function signup() {
+         
+      let username = document.getElementById("username").value;
+      let password = document.getElementById("pw").value;
+      let repassword = document.getElementById("rpw").value;
+      let tasks;
+      if (localStorage.getItem("users") == null) {
+         tasks = [];
+      } else {
+         tasks = JSON.parse(localStorage.getItem("users"));
+       }
+  //   console.log(username, password);
+  if (password == repassword) {
+    tasks.push({ usr: username, pass: password });
+    localStorage.setItem("users", JSON.stringify(tasks));
+    alert("Signup Successful!");
+  } else {
+    alert("password didnt match!!");
+  }
+
+  username = "";
+  password = "";
+  repassword = "";
+  modal.style.display = "none";
+}
+
+        </script>
+</body>
+</html>

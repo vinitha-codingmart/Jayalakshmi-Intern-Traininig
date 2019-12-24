@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+      table,
+      th,
+      td {
+        width: 50%;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="details">
+      <script>
+        let items;
+        if (localStorage.getItem("users") == null) {
+          items = [];
+        } else {
+          items = JSON.parse(localStorage.getItem("users"));
+        }
+        window.onload = function() {
+          let items;
+          if (localStorage.getItem("users") == null) {
+            items = [];
+          } else {
+            items = JSON.parse(localStorage.getItem("users"));
+          }
+
+          let html = "<tr>    <th>Username</th><th>Password</th>    </tr>";
+
+          items.forEach(function(item) {
+            html += `
+            <tr>
+            <td>
+            <h1>${item.usr}</h1></td>
+            <td>
+               <h1>${item.pass}</h1></td></tr>`;
+          });
+
+          document.querySelector("#details").innerHTML = html;
+        };
+        let sd = false;
+        function onclick(cname) {
+          const dataType = typeof items[0][cname];
+          sd = !sd;
+          switch (dataType) {
+            case "number":
+              sortNumberColumn(sd, cname);
+              break;
+          }
+        }
+        function sortNumbercolumn(sort, cname) {
+          items = items.sort((p1, p2) => {
+            return sort ? p1[cname] - p2[cname] : p2[cname] - p1[cname];
+          });
+        }
+      </script>
+    </table>
+  </body>
+</html>

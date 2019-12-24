@@ -12,7 +12,7 @@
 .column1 {
   float: left;
   width: 40%;
-  padding: 20px;
+ padding-left: 100px;
   height: 300px; /* Should be removed. Only for demonstration */
 }
 .column2{
@@ -45,19 +45,7 @@ h3{
     </head>
     <body>
     <div class="row">
-  <div class="column1">
-   
-    <h1>Register</h1>
-      <form id="register-form"> 
-       <h3>Name:     <input id="username" type="text" placeholder="Name" value=""/><br></h3>
-        <h3>Password:    <input id="pw" type="password" placeholder="Password" value=""/><br></h3>
-         <h3>Reenter your Password  <input id="rpw" type="password" placeholder="rpassword" value=""/><br></h3>
-            <input id="rgstr_btn" type="submit" value="Signup" onClick="signup()"/> 
-        </form>
-
-        </div>
-        <br>
-        
+  
   <div class="column2">
         <h1>Login</h1>
         <form id="login-form"> 
@@ -67,32 +55,25 @@ h3{
             <input id="login_btn" type="button" value="Login" onClick="login()"/> 
        </form>
        </div>
+       <div class="column1">
+        <h1>Admin Login</h1>
+        <form id="login-form"> 
+        <h3>Username:
+            <input id="usernameadminLogin" type="text" placeholder="Enter Username" value=""/></h3>
+         <h3>Password:   <input id="passwordadminlogin" type="password" placeholder="Enter Password" value=""/></h3><br>
+            <input id="adminlogin_btn" type="button" value="Login" onClick="adminlogin()"/> 
+       </form>
+       </div>
        </div>
        <script>
- function signup() {
-      let username = document.getElementById("username").value;
-      let password = document.getElementById("pw").value;
-      let repassword = document.getElementById("rpw").value;
-      let tasks;
-      if (localStorage.getItem("users") == null) {
-         tasks = [];
-      } else {
-         tasks = JSON.parse(localStorage.getItem("users"));
-       }
-  //   console.log(username, password);
-  if (password == repassword) {
-    tasks.push({ usr: username, pass: password });
-    localStorage.setItem("users", JSON.stringify(tasks));
-    alert("Signup Successful!");
-  } else {
-    alert("password didnt match!!");
-  }
-
-  username = "";
-  password = "";
-  repassword = "";
-  modal.style.display = "none";
-}
+       function adminlogin()
+       {
+        if((document.getElementById("usernameadminLogin").value=="admin") &&(document.getElementById("passwordadminlogin").value=="admin"))
+        {
+      alert("login Successful!!");
+      window.location.href ="storagecontent.html";
+		}
+	   }
 
 function login() 
 {
