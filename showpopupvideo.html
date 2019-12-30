@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.w3-modal-content{
+  margin: auto;
+  padding: 20px;
+  border: 5px solid #888;
+  width: 80%;
+  }
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+img{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  width: 200px;
+}
+.css3gallery img{
+-webkit-transform:scale(0.8); /*Webkit: Scale down image to 0.8x original size*/
+-moz-transform:scale(0.8); /*Mozilla scale version*/
+-o-transform:scale(0.8); /*Opera scale version*/
+-webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+-moz-transition-duration: 0.5s; /*Mozilla duration version*/
+-o-transition-duration: 0.5s; /*Opera duration version*/
+opacity: 0.7; /*initial opacity of images*/
+margin: 0 10px 5px 0; /*margin between images*/
+}
+ 
+.css3gallery img:hover{
+-webkit-transform:scale(1.1); /*Webkit: Scale up image to 1.2x original size*/
+-moz-transform:scale(1.1); /*Mozilla scale version*/
+-o-transform:scale(1.1); /*Opera scale version*/
+box-shadow:0px 0px 30px gray; /*CSS3 shadow: 30px blurred shadow all around image*/
+-webkit-box-shadow:0px 0px 30px gray; /*Safari shadow version*/
+-moz-box-shadow:0px 0px 30px gray; /*Mozilla shadow version*/
+opacity: 1;
+}
+
+</style>
+</head>
+<body>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+<div class="w3-container">
+  <div class="css3gallery">
+  <img  src="http://nimaisoft.com/css/images/inner-images/bigdata.jpg" onclick="document.getElementById('id01').style.display='block'">
+  <img  src="https://www.brandcrowd.com/gallery/brands/pictures/picture15694039999800.png" onclick="document.getElementById('id02').style.display='block'">
+  <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjo5xFkM4TPY6euvqijIk_o-JNDZ8At8bOy2dYn6tgo9xZcC09UQ&s" onclick="document.getElementById('id03').style.display='block'">
+  <img  src="https://c8.alamy.com/comp/PT8KMP/big-data-colored-rainbow-word-text-suitable-for-card-brochure-or-typography-logo-design-PT8KMP.jpg" onclick="document.getElementById('id04').style.display='block'">
+  <img  src="https://cdn1.vectorstock.com/i/1000x1000/35/75/two-color-big-data-icon-from-concept-isolated-vector-25693575.jpg" onclick="document.getElementById('id05').style.display='block'">
+  <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcd__NlpRW4IjFd9cbm6d60SGIt6t5C_UHv2IzoaX7Z9MamyEL7g&s" onclick="document.getElementById('id04').style.display='block'">
+  <img  src="https://5.imimg.com/data5/RY/IY/GLADMIN-60652954/big-data-solutions-500x500.png" onclick="document.getElementById('id04').style.display='block'">
+  <img  src="https://www.kdnuggets.com/wp-content/uploads/the-8-vs-of-big-data.png" onclick="document.getElementById('id04').style.display='block'">
+ 
+  </div>
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content"   style="background-color:black;">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <div id="id02" class="w3-modal">
+    <div class="w3-modal-content"   style="background-color: black;">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <div id="id03" class="w3-modal">
+    <div class="w3-modal-content"   style="background-color: black;">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <div id="id04" class="w3-modal">
+    <div class="w3-modal-content"   style="background-color: black;">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+     
+<div id="id05" class="w3-modal">
+  <div class="w3-modal-content"   style="background-color: black;">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id05').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+      </iframe>
+    </div>
+  </div>
+</div> 
+    
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
