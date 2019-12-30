@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Learning JavaScript</title>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="firebasesignup.js"></script>
+        <style>
+        * {
+  box-sizing: border-box;
+  
+}
+
+/* Create two equal columns that floats next to each other */
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body{
+    background-image:url('https://coloredbrain.com/wp-content/uploads/2016/07/login-background.jpg');
+    color:white;
+    height: 100%; 
+    background-position: center;
+    
+}
+h1{
+    font-size:50px;
+}
+h3{
+    font-size:25px;
+}
+
+</style>
+    </head>
+    <body>
+    
+        <h1>Login</h1>
+        <form id="login-form"> 
+        <h3>Username:
+            <input id="email" type="text" placeholder="Enter Username" value=""/></h3>
+         <h3>Password:   <input id="password" type="password" placeholder="Enter Password" value=""/></h3><br>
+            <input id="login_btn" type="button" value="Login" onClick="signIn()"/> 
+       </form>
+       </body>
+       </html>
+       
+       
