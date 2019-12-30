@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="firebasesignup.js">
+    </script>
+    <style>
+   
+    .column1 {
+  float: left;
+  width: 40%;
+  padding-top: 10px;
+  padding-left: 200px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body{
+    background-image:url('https://coloredbrain.com/wp-content/uploads/2016/07/login-background.jpg');
+    color:white;
+    height: 100%; 
+    background-position: center;
+    
+}
+h1{
+    font-size:50px;
+}
+h3{
+    font-size:25px;
+}
+</style>
+</head>
+<body>
+
+   
+    <h1>Register</h1>
+      <form id="register-form"> 
+       <h3>Name:    <input id="email" type="text" placeholder="Name" value=""/><br></h3>
+        <h3>Password:    <input id="password" type="password" placeholder="Password" value=""/><br></h3>
+         <h3>Reenter your Password: <input id="rpassword" type="password" placeholder="rpassword" value=""/><br></h3>
+    
+         <input type="button" onclick="signup()" value="SignUp"/>
+        </form>
+     <a href="newsignin.html">   <i>Back to signin</i></a>
+
+        
+</body>
+</html>
