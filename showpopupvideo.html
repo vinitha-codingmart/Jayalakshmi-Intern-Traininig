@@ -3,7 +3,32 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
+<script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #videosList {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        padding: 20px;
+        max-width: 200px;
+        
+        
+      }
+      .video{
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+    
+
+      /* Hide Play button + controls on iOS */
+      video::-webkit-media-controls {
+        display: none !important;
+      }
+   
 body {font-family: Arial, Helvetica, sans-serif;}
 
 /* The Modal (background) */
@@ -33,6 +58,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   margin: auto;
   padding: 20px;
   border: 5px solid #888;
+  background-color:black;
   width: 80%;
   }
 /* The Close Button */
@@ -49,7 +75,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   text-decoration: none;
   cursor: pointer;
 }
-img{
+img,video{
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 10px;
@@ -75,7 +101,12 @@ box-shadow:0px 0px 30px gray; /*CSS3 shadow: 30px blurred shadow all around imag
 -moz-box-shadow:0px 0px 30px gray; /*Mozilla shadow version*/
 opacity: 1;
 }
+.youtube_play{
 
+width:900px;
+height:500px;
+margin-left:10%;
+}
 </style>
 </head>
 <body>
@@ -91,6 +122,40 @@ opacity: 1;
     
 <div class="w3-container">
   <div class="css3gallery">
+    <div id="videosList">
+      <div class="video" onclick="document.getElementById('id01').style.display='block'">
+        <video class="thevideo"  id="videoplay" loop preload="auto">
+          <source
+            src="https://giant.gfycat.com/VerifiableTerrificHind.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="video" onclick="document.getElementById('id01').style.display='block'">
+        <video class="thevideo"  id="videoplay" loop preload="auto">
+          <source
+            src="https://giant.gfycat.com/VerifiableTerrificHind.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="video" onclick="document.getElementById('id01').style.display='block'">
+        <video class="thevideo"  id="videoplay" loop preload="auto">
+          <source
+            src="https://giant.gfycat.com/VerifiableTerrificHind.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="video" onclick="document.getElementById('id01').style.display='block'">
+        <video class="thevideo"  id="videoplay" loop preload="auto">
+          <source
+            src="https://giant.gfycat.com/VerifiableTerrificHind.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
   <img  src="http://nimaisoft.com/css/images/inner-images/bigdata.jpg" onclick="document.getElementById('id01').style.display='block'">
   <img  src="https://www.brandcrowd.com/gallery/brands/pictures/picture15694039999800.png" onclick="document.getElementById('id02').style.display='block'">
   <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjo5xFkM4TPY6euvqijIk_o-JNDZ8At8bOy2dYn6tgo9xZcC09UQ&s" onclick="document.getElementById('id03').style.display='block'">
@@ -102,37 +167,37 @@ opacity: 1;
  
   </div>
   <div id="id01" class="w3-modal">
-    <div class="w3-modal-content"   style="background-color:black;">
+    <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+        <iframe class="youtube_play" src="https://www.youtube.com/embed/lcZDWo6hiuI">
         </iframe>
       </div>
     </div>
   </div>
   <div id="id02" class="w3-modal">
-    <div class="w3-modal-content"   style="background-color: black;">
+    <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+        <iframe class="youtube" src="https://www.youtube.com/embed/lcZDWo6hiuI">
         </iframe>
       </div>
     </div>
   </div>
   <div id="id03" class="w3-modal">
-    <div class="w3-modal-content"   style="background-color: black;">
+    <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+        <iframe class="youtube" src="https://www.youtube.com/embed/lcZDWo6hiuI">
         </iframe>
       </div>
     </div>
   </div>
   <div id="id04" class="w3-modal">
-    <div class="w3-modal-content"   style="background-color: black;">
+    <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+        <iframe class="youtube" src="https://www.youtube.com/embed/lcZDWo6hiuI">
         </iframe>
       </div>
     </div>
@@ -140,10 +205,10 @@ opacity: 1;
 </div>
      
 <div id="id05" class="w3-modal">
-  <div class="w3-modal-content"   style="background-color: black;">
+  <div class="w3-modal-content">
     <div class="w3-container">
       <span onclick="document.getElementById('id05').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-      <iframe width="900px" height="500px" src="https://www.youtube.com/embed/lcZDWo6hiuI" style="margin-left:10%;">
+      <iframe class="youtube" src="https://www.youtube.com/embed/lcZDWo6hiuI">
       </iframe>
     </div>
   </div>
@@ -152,15 +217,37 @@ opacity: 1;
 </div>
 
 <script>
+ 
+
+  
+      var figure = $(".video").hover(hoverVideo, hideVideo);
+
+      function hoverVideo(e) {
+        $("video", this)
+          .get(0)
+          .play();
+      }
+
+      function hideVideo(e) {
+        $("video", this)
+          .get(0)
+          .pause();
+      }
+      $('span.w3-button w3-display-topright').click(function(){
+	$('.youtube_play')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+});
+
+    
 // Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
+var play=document.getElementsByClassName("youtube_play");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
+var span1=document.getElementsByClassName("w3-button w3-display-topright")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
@@ -168,9 +255,13 @@ btn.onclick = function() {
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
+  
   modal.style.display = "none";
 }
-
+span1.onclick = function() {
+  //play.stopVideo();
+  modal.style.display= "none";
+}
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
