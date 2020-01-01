@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
+    <title>Learning JavaScript</title>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
 
-        <title>Learning JavaScript</title>
-        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <style>
+      #loading {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(192, 192, 192, 0.5);
+        background-image: url("http://i.stack.imgur.com/MnyxU.gif");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create two equal columns that floats next to each other */
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      body {
+        background-image: url("https://coloredbrain.com/wp-content/uploads/2016/07/login-background.jpg");
+        color: white;
+        height: 100%;
+        background-position: center;
+      }
+      h1 {
+        font-size: 50px;
+      }
+      h3 {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form id="login-form">
+      <h3>
+        Username:
+        <input id="email" type="text" placeholder="Enter Username" value="" />
+      </h3>
+      <h3>
+        Password:
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter Password"
+          value=""
+        />
+      </h3>
+      <br />
+      <input id="login_btn" type="button" value="Login" onclick="signIn()" />
+    </form>
+    <div id="loading"></div>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAFO9BThg1FLTmU2kKr-Bi1Ypf2kOx0C3o",
+        authDomain: "forms-10813.firebaseapp.com",
+        databaseURL: "https://forms-10813.firebaseio.com",
+        projectId: "forms-10813",
+        storageBucket: "forms-10813.appspot.com",
+        messagingSenderId: "931248775019",
+        appId: "1:931248775019:web:da350cc116fb957ce6f62e"
+      };
+    </script>
     <script src="firebasesignup.js"></script>
-        <style>
-        * {
-  box-sizing: border-box;
-  
-}
-
-/* Create two equal columns that floats next to each other */
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-body{
-    background-image:url('https://coloredbrain.com/wp-content/uploads/2016/07/login-background.jpg');
-    color:white;
-    height: 100%; 
-    background-position: center;
-    
-}
-h1{
-    font-size:50px;
-}
-h3{
-    font-size:25px;
-}
-
-</style>
-    </head>
-    <body>
-    
-        <h1>Login</h1>
-        <form id="login-form"> 
-        <h3>Username:
-            <input id="email" type="text" placeholder="Enter Username" value=""/></h3>
-         <h3>Password:   <input id="password" type="password" placeholder="Enter Password" value=""/></h3><br>
-            <input id="login_btn" type="button" value="Login" onClick="signIn()"/> 
-       </form>
-       </body>
-       </html>
-       
-       
+  </body>
+</html>
