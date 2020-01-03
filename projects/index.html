@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+
+      .form-group:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+      }
+
+      .col-md-4 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+
+      label {
+        padding: 15px 12px 12px 0;
+        display: inline-block;
+        font-size: 20px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      .btn {
+        background-color: #2fbe34;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+
+      .btn:hover {
+        background-color: #065009;
+      }
+      a {
+        color: #2fbe34;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form-horizontal" method="post" action="/submit">
+        <fieldset>
+          <legend><h1>User Details</h1></legend>
+          <div class="form-group">
+            <div class="col-25">
+              <label class="col-md-4 control-label" for="name"
+                ><b>Name</b></label
+              >
+            </div>
+            <div class="col-md-4">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Enter your Name"
+                class="form-control input-md"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-25">
+              <label class="col-md-4 control-label" for="email"
+                ><b>Email</b></label
+              >
+            </div>
+            <div class="col-md-4">
+              <input
+                id="email"
+                name="email"
+                type="text"
+                placeholder="Enter email"
+                class="form-control input-md"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-25">
+              <label class="col-md-4 control-label" for="mobile"
+                ><b>mobile</b></label
+              >
+            </div>
+            <div class="col-md-4">
+              <input
+                id="mobile"
+                name="mobile"
+                type="text"
+                placeholder="Enter your mobile number"
+                class="form-control input-md"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-25">
+              <label class="col-md-4 control-label" for="submit"></label>
+            </div>
+            <div class="col-md-4">
+              <div>
+                <a href="/users">
+                  <b>Show Users</b>
+                </a>
+              </div>
+              <button id="submit" name="submit" class="btn">
+                <b>Save</b>
+              </button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
