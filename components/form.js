@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import "./formstyle.css";
+//import { Link } from "react-router";
+import { Link } from "react-router-dom";
 export default class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      email: "",
-      job: "hardware"
+      email: ""
     };
   }
+
+  //   componentWillMount() {
+  //     debugger;
+  //   }
 
   handleUsernameChange = event => {
     this.setState({
@@ -22,18 +27,11 @@ export default class Form extends Component {
     });
   };
 
-  handleJobChange = event => {
-    this.setState({
-      job: event.target.value
-    });
-  };
-
   handleSubmit = event => {
     //event.preventDefault();
     this.state = {
       username: "",
-      email: "",
-      job: "hardware"
+      email: ""
     };
     //alert(`${this.state.username} ${this.state.email} ${this.state.job}`);
   };
@@ -63,7 +61,7 @@ export default class Form extends Component {
 
           <div className="row">
             <div className="c1">
-              <label>email</label>
+              <label>Password</label>
             </div>
             <div className="c2">
               <input
@@ -75,20 +73,11 @@ export default class Form extends Component {
           </div>
 
           <div className="row">
-            <div className="c1">
-              <label>Job</label>
-            </div>
-            <div className="c2">
-              <select value={this.state.job} onChange={this.handleJobChange}>
-                <option value="hardware">Hardware</option>
-                <option value="software">Software</option>
-              </select>
-            </div>
-          </div>
-          <div className="row">
-            <button className="btn" type="submit">
-              Submit
-            </button>
+            <Link to="/form1">
+              <button className="btn" type="submit">
+                Login
+              </button>
+            </Link>
           </div>
         </form>
       </div>
