@@ -1,90 +1,153 @@
-import React, { useEffect, Component } from "react";
-import GifList from "./components/GifList";
-import SearchBar from "./components/SearchBar";
-import request from "superagent";
-//import { throttle, debounce } from "throttle-debounce";
-//import InfiniteScroll from "react-infinite-scroller";
+import React, { Component } from "react";
+import File1 from "./components/File1";
+import "./components/filestyle.css";
 import "./App.css";
-
 export class App extends Component {
-  constructor() {
-    super();
-
+  constructor(props) {
+    super(props);
     this.state = {
-      gifs: [],
-      flag: 1
+      name: ["aa", "bb"],
+      url: [
+        "https://www.youtube.com/watch?v=uilkmUoXoLU",
+        "https://www.youtube.com/watch?v=uilkmUoXoLU"
+      ],
+      url1: "",
+      url2: "",
+      filtered: ["learn here", "uploading tutorial"]
     };
-
-    this.handleScroll = this.handleScroll.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-  //var flag=1;
-  handleScroll() {
-    const windowHeight =
-      "innerHeight" in window
-        ? window.innerHeight
-        : document.documentElement.offsetHeight;
 
+  displayData = data => {
+    this.setState({
+      name: data
+    });
+    console.log("video title:", this.state.name);
+  };
 
-    const body = document.body;
-    const html = document.documentElement;
-    
-    const docHeight = Math.max(
-      body.scrollHeight,
-      body.offsetHeight,
-      html.clientHeight,
-      html.scrollHeight,
-      html.offsetHeight
-    );
-    const windowBottom = windowHeight + window.pageYOffset;
-    //console.log("win", windowBottom);
+  displayUrl = data => {
+    this.setState({
+      url: data
+    });
+    console.log("videos:", this.state.url);
+  };
 
-    //console.log("doc", docHeight);
+  displayUrl1 = data => {
+    this.setState({
+      url1: data
+    });
+  };
 
-    if (windowBottom + 1 >= docHeight) {
-      console.log("reached!!!!");
-      this.setState({ flag: this.state.flag + 1 });
+  displayName = data => {
+    this.setState({
+      url2: data
+    });
+  };
+
+  componentDidUpdate() {
+    fetch("http://localhost:5000/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ url: this.state.url1, url1: this.state.url2 })
+    })
+      .then(response => {
+        return response.text();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleChange(e) {
+    // Variable to hold the original version of the list
+    let currentList = [];
+    // Variable to hold the filtered list before putting into state
+    let newList = [];
+    console.log(e.target.value);
+    // If the search bar isn't empty
+    if (e.target.value !== "") {
+      currentList = this.state.name;
+
+      // Use .filter() to determine which items should be displayed
+      // based on the search terms
+      newList = currentList.filter(item => {
+        const lc = item.toLowerCase();
+        // change search term to lowercase
+        const filter = e.target.value.toLowerCase();
+        // check to see if the current list item includes the search term
+        // If it does, it will be added to newList. Using lowercase eliminates
+        // issues with capitalization in search terms and search content
+        return lc.includes(filter);
+      });
     } else {
-      console.log("not yet!!!");
+      // If the search bar is empty, set newList to original task list
+      newList = this.state.name;
     }
-  }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
-
-  handleTermChange(term) {
-    const url = `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g&limit=25`;
-
-    request.get(url, (err, res) => {
-      this.setState({ gifs: res.body.data });
+    // Set the filtered state based on what our rules added to newList
+    this.setState({
+      filtered: newList
     });
   }
+
   render() {
     const child = [];
-    for (var i = 0; i < this.state.flag; i += 1) {
-      child.push(<GifList gifs={this.state.gifs} />);
+    console.log(this.state.url.length);
+    for (var i = 0; i < this.state.url.length; i++) {
+      //console.log("innnnnnnnnnnnnnnnnnnnnnn");
+      child.push(
+        <div className="vdisplay">
+          <p>{this.state.name[i]}</p>
+          <video width="320" height="240" controls>
+            <source src={this.state.url[i]} type="video/mp4" />
+          </video>
+        </div>
+      );
     }
-    return (
-      <div id="main1">
-        <div className="search">
-          <h1>
-            <img
-              src="https://static.ezgif.com/images/format-demo/butterfly.png"
-              alt=""
+    const child1 = [];
+    for (var i = 0; i < this.state.filtered.length; i++) {
+      child1.push(
+        <div className="vdisplay">
+          <p>{this.state.filtered[i]}</p>
+          <video width="320" height="240" controls>
+            <source
+              src={
+                this.state.url[this.state.name.indexOf(this.state.filtered[i])]
+              }
+              type="video/mp4"
             />
-            Gify Search
-          </h1>
+          </video>
         </div>
-        <SearchBar onTermChange={term => this.handleTermChange(term)} />
+      );
+    }
 
-        <div id="display">
-          {/* <GifList gifs={this.state.gifs} /> */}
-          {child}
+    //let l  = fil.findIndex(is=>)
+    return (
+      <div>
+        <File1
+          displayData={this.displayData}
+          displayUrl={this.displayUrl}
+          displayUrl1={this.displayUrl1}
+          displayName={this.displayName}
+        />
+        <div className="searchbar">
+          <input
+            type="text"
+            className="input"
+            onChange={this.handleChange}
+            placeholder="Search..."
+          />
         </div>
+        <div className="display">{child1}</div>
+        {/* <ul>
+          {this.state.filtered.map(item => (
+            <li key={item}>{item} &nbsp; </li>
+          ))}
+        </ul> */}
+
+        {/* <div className="display">{child}</div> */}
       </div>
     );
   }
