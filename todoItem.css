@@ -31,3 +31,16 @@
   border-color: rgba(203, 20, 32, 0.4);
   background-color: transparent;
 }
+
+.form {
+  margin: 0 auto;
+  padding: 100px 30px 0;
+
+  @media (min-width: 800px) {
+    max-width: 60%;
+  }
+}
+
+.input-range {
+  margin-bottom: 160px;
+}
